@@ -1,5 +1,7 @@
 cd
 
+echo "starting setup"
+
 # Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -13,34 +15,28 @@ chsh -s /usr/local/bin/fish
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
 # Setup dev dir
-mkdir ~/dev
+mkdir dev
 cd dev
 
 # Download config files
 git clone https://github.com/Kdoherty11/config-files.git
+git config -f ~/dev/config-files/.git/config --add core.worktree $HOME
 
 # Make android out files in ~/dev
 mkdir android-out
 mkdir android-out/screenshots
-mkdir android-out/demos
+mkdir android-out/recordings
 
+# Adds document files
 cd ~/Documents
 touch todo
 touch pinned-info
 
-mkdir ~/Desktop/screenshots
-
 # Make screenshots go to the screenshots directory
+mkdir ~/Desktop/screenshots
 defaults write com.apple.screencapture location ~/Desktop/screenshots
-
 killall SystemUIServer
 
 cd
 
-echo "set up complete!"
-
-
-
-
-
-
+echo "setup completed successfully!"
