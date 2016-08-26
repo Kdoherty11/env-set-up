@@ -1,13 +1,12 @@
 cd
 
-echo "starting setup"
+echo "Starting setup"
 
 # Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Install Fish
+# Install Fish and make it the default shell
 brew install fish
-
 sudo echo /usr/local/bin/fish >> /etc/shells
 chsh -s /usr/local/bin/fish
 
@@ -22,11 +21,6 @@ cd dev
 git clone https://github.com/Kdoherty11/config-files.git
 git config -f ~/dev/config-files/.git/config --add core.worktree $HOME
 
-# Make android out files in ~/dev
-mkdir android-out
-mkdir android-out/screenshots
-mkdir android-out/recordings
-
 # Adds document files
 cd ~/Documents
 touch todo
@@ -39,4 +33,4 @@ killall SystemUIServer
 
 cd
 
-echo "setup completed successfully!"
+echo "Setup completed successfully!"
