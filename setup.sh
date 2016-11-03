@@ -20,6 +20,7 @@ cd dev
 # Download config files
 git clone https://github.com/Kdoherty11/config-files.git
 git config -f ~/dev/config-files/.git/config --add core.worktree $HOME
+cp ~/dev/config-files/.gitignore ~/.gitignore
 
 # Adds document files
 cd ~/Documents
