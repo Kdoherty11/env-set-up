@@ -27,7 +27,7 @@ git config -f ~/dev/config-files/.git/config --add core.excludesFile ~/dev/confi
 # Adds document files
 cd ~/Documents
 touch todo
-touch pinned-info
+touch how-to
 
 # Make screenshots go to the screenshots directory
 mkdir ~/Desktop/screenshots
